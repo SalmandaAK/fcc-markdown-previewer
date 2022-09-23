@@ -2,7 +2,7 @@ const defaultText = (
 `# This is heading Level 1
 ## Heading Level 2
 
-[An example link which links to google](https://www.google.com)
+[An example link which links to GitHub repository of this project.](https://github.com/SalmandaAK/fcc-markdown-previewer)
 
 This is a function \`howToCreateCodeBlock()\`.
 
