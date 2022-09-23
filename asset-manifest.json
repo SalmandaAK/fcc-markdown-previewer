@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SalmandaAK/fcc-markdown-previewer/static/css/main.c7882caa.css",
-    "main.js": "/SalmandaAK/fcc-markdown-previewer/static/js/main.6f31d9af.js",
+    "main.js": "/SalmandaAK/fcc-markdown-previewer/static/js/main.95249aed.js",
     "static/js/787.9830f409.chunk.js": "/SalmandaAK/fcc-markdown-previewer/static/js/787.9830f409.chunk.js",
     "index.html": "/SalmandaAK/fcc-markdown-previewer/index.html",
     "main.c7882caa.css.map": "/SalmandaAK/fcc-markdown-previewer/static/css/main.c7882caa.css.map",
-    "main.6f31d9af.js.map": "/SalmandaAK/fcc-markdown-previewer/static/js/main.6f31d9af.js.map",
+    "main.95249aed.js.map": "/SalmandaAK/fcc-markdown-previewer/static/js/main.95249aed.js.map",
     "787.9830f409.chunk.js.map": "/SalmandaAK/fcc-markdown-previewer/static/js/787.9830f409.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c7882caa.css",
-    "static/js/main.6f31d9af.js"
+    "static/js/main.95249aed.js"
   ]
 }
