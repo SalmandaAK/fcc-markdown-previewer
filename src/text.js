@@ -74,13 +74,7 @@ ___bold italic text___
     
 Horizontal rule:
 ___
-***
-
-Table:
-| H1 | H2 | H3 |
-|----|----|----|
-| Row 1 | Row 1 | Row 1|
-| Row 2 | Row 2 | Row 2|`
+***`
 )
 
 const text = {
