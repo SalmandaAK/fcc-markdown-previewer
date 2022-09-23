@@ -1,24 +1,92 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack';
+import Modal from 'react-bootstrap/Modal';
+
 import './App.css';
 
+import { marked } from 'marked';
+import text from './text.js'
+
+const extendedTables = require('marked-extended-tables');
+
+marked
+  .setOptions({
+    gfm: true,
+    breaks: true,
+  });
+
+marked.use(extendedTables);
+
 function App() {
+  const [currentText, setText] = useState(text.getDefault());
+
+  const handleChange = (e) => setText(e.target.value);
+
+  const handleReset = () => setText(text.getDefault());
+  const handleClearText = () => setText("");
+
+  function createMarkup() {
+    return { __html: marked.parse(currentText) };
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header className="d-flex bg-dark justify-content-center p-2 mb-3">
+      <h1 className="text-light">Markdown Previewer</h1>
+    </header>
+    <main>
+      <Container fluid="lg" className="rounded border p-3 bg-light">
+        <Row className="gy-3">
+          <Col xs={12}>
+            <Stack direction="horizontal" gap={3}>
+              <HelpButton />
+              <Button variant="primary" onClick={handleReset} className="ms-auto">Reset</Button>
+              <Button variant="danger" onClick={handleClearText}>Clear Text</Button>
+            </Stack>
+          </Col>
+          <Col md={6}>
+            <Form>
+              <Form.Control id="editor" as="textarea" onChange={handleChange} value={currentText}></Form.Control>
+            </Form>
+          </Col>
+          <Col md={6}>
+            <Form.Control as="div" className="mb-3" id="preview" dangerouslySetInnerHTML={createMarkup()}>
+            </Form.Control>
+          </Col>
+        </Row>
+      </Container>
+    </main>
+  </>
+  );
+}
+
+function HelpButton() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="success" onClick={handleShow}>
+        Examples
+      </Button>
+
+      <Modal size="lg" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>You can copy paste these examples into the text editor</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <pre>{text.getExamples()}</pre>
+        </Modal.Body>
+      </Modal>
+    </>
   );
 }
 
