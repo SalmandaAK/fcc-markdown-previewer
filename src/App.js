@@ -11,13 +11,15 @@ import Modal from 'react-bootstrap/Modal';
 import './App.css';
 
 import { marked } from 'marked';
+import * as extendedTables from 'marked-extended-tables';
 import text from './text.js';
 
 marked
   .setOptions({
     gfm: true,
     breaks: true,
-  });
+  })
+  .use(extendedTables);
 
 function App() {
   const [currentText, setText] = useState(text.getDefault());
