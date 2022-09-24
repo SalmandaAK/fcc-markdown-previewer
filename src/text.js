@@ -20,7 +20,7 @@ To create ordered list:
 2. You can start with any number and still converted as the correct number in html.
 736374. This number still show up as 3.
 
-> This is a blockquote. _Insert some long quotes here to see the text is wrapped into the last line_.
+> This is a blockquote. _Insert some long quotes here to see that the text is wrapped into the last line_.
 
 ![Google Logo](https://www.google.com/images/errors/logo_sm.gif)
 
@@ -34,7 +34,13 @@ Put at least three hypens, asterisks, or underscores to create horizontal rule, 
 ---
 ***
 ___
-If you use hypens, you need to add a blank because three hypens under a text will turns that text into a heading.`
+
+If you use hypens, you need to add a blank line like this
+
+---
+
+Because three hypens under a text will turn that text into a heading.
+---`
 )
 
 const examplesText = (
