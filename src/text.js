@@ -27,7 +27,7 @@ To create ordered list:
 **Bold text**
 _Italic text_
 ___Bold italic text___
-~strike through~
+~~strike through~~
 
 Put at least three hypens, asterisks, or underscores to create horizontal rule, like this:
 
