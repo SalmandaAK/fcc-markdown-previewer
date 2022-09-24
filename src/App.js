@@ -11,7 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 import './App.css';
 
 import { marked } from 'marked';
-import * as extendedTables from 'marked-extended-tables';
+import { default as extendedTables } from 'https://cdn.jsdelivr.net/gh/calculuschild/marked-extended-tables/src/index.js';
 import text from './text.js';
 
 marked
