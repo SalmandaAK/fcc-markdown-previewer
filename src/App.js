@@ -43,9 +43,9 @@ function App() {
         <Row className="gy-3">
           <Col xs={12}>
             <Stack direction="horizontal" gap={3}>
-              <HelpButton />
-              <Button variant="primary" onClick={handleReset} className="ms-auto">Reset</Button>
+              <Button variant="primary" onClick={handleReset}>Reset</Button>
               <Button variant="danger" onClick={handleClearText}>Clear Text</Button>
+              <HelpButton />
             </Stack>
           </Col>
           <Col md={6}>
@@ -72,7 +72,7 @@ function HelpButton() {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow}>
+      <Button variant="success" onClick={handleShow} className="ms-auto">
         Examples
       </Button>
 
