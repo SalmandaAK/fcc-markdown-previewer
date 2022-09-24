@@ -10,16 +10,8 @@ import Modal from 'react-bootstrap/Modal';
 
 import './App.css';
 
-import { marked } from 'marked';
-import { default as extendedTables } from 'https://cdn.jsdelivr.net/gh/calculuschild/marked-extended-tables/src/index.js';
+import { Remarkable } from 'remarkable';
 import text from './text.js';
-
-marked
-  .setOptions({
-    gfm: true,
-    breaks: true,
-  })
-  .use(extendedTables);
 
 function App() {
   const [currentText, setText] = useState(text.getDefault());
@@ -29,8 +21,11 @@ function App() {
   const handleReset = () => setText(text.getDefault());
   const handleClearText = () => setText("");
 
-  function createMarkup() {
-    return { __html: marked.parse(currentText) };
+  const md = new Remarkable({
+    breaks: true
+  });
+  function createMarkUp() {
+    return { __html: md.render(currentText) };
   }
 
   return (
@@ -54,7 +49,7 @@ function App() {
             </Form>
           </Col>
           <Col md={6}>
-            <Form.Control as="div" className="mb-3" id="preview" dangerouslySetInnerHTML={createMarkup()}>
+            <Form.Control as="div" className="mb-3" id="preview" dangerouslySetInnerHTML={createMarkUp()}>
             </Form.Control>
           </Col>
         </Row>
