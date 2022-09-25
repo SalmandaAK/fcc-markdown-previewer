@@ -40,7 +40,7 @@ function App() {
             <Stack direction="horizontal" gap={3}>
               <Button variant="primary" onClick={handleReset}>Reset</Button>
               <Button variant="danger" onClick={handleClearText}>Clear Text</Button>
-              <HelpButton />
+              <QuickReferenceButton />
             </Stack>
           </Col>
           <Col md={6}>
@@ -59,7 +59,7 @@ function App() {
   );
 }
 
-function HelpButton() {
+function QuickReferenceButton() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -68,7 +68,7 @@ function HelpButton() {
   return (
     <>
       <Button variant="success" onClick={handleShow} className="ms-auto">
-        Examples
+        Quick Reference
       </Button>
 
       <Modal size="lg" show={show} onHide={handleClose}>
